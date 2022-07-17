@@ -7,12 +7,12 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import ro.alexmamo.filterfirestorejetpackcompose.domain.model.Product
+import ro.alexmamo.filterfirestorejetpackcompose.domain.repository.ProductList
 
 @Composable
 fun ProductListLazyColumn(
     padding: PaddingValues,
-    productList: List<Product>,
+    productList: ProductList,
     navigateToProductDetailsScreen: (productName: String) -> Unit
 ) {
     LazyColumn(

@@ -7,14 +7,10 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import ro.alexmamo.filterfirestorejetpackcompose.core.Constants.EMPTY_STRING
-import ro.alexmamo.filterfirestorejetpackcompose.domain.model.Product
-import ro.alexmamo.filterfirestorejetpackcompose.domain.model.Response
 import ro.alexmamo.filterfirestorejetpackcompose.domain.model.Response.Success
 import ro.alexmamo.filterfirestorejetpackcompose.domain.repository.ProductListRepository
+import ro.alexmamo.filterfirestorejetpackcompose.domain.repository.ProductListResponse
 import javax.inject.Inject
-
-typealias ProductList = List<Product>
-typealias ProductListResponse = Response<ProductList>
 
 @HiltViewModel
 class ProductListViewModel @Inject constructor(
