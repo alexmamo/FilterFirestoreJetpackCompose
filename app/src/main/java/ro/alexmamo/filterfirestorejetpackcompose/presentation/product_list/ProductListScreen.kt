@@ -27,7 +27,7 @@ fun ProductListScreen(
         },
         content = { padding ->
             viewModel.getProductList(NO_SEARCH)
-            when(val productListResponse = viewModel.productListState.value) {
+            when(val productListResponse = viewModel.productListResponse) {
                 is Loading -> ProgressBar()
                 is Success -> ProductListContent(
                     padding = padding,

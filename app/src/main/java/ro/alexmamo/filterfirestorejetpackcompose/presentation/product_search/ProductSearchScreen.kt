@@ -49,7 +49,7 @@ fun ProductSearchScreen(
         content = { padding ->
             val searchText = search.text
             viewModel.getProductList(searchText)
-            when(val productListResponse = viewModel.productListState.value) {
+            when(val productListResponse = viewModel.productListResponse) {
                 is Loading -> ProgressBar()
                 is Success -> {
                     val productList = productListResponse.data
