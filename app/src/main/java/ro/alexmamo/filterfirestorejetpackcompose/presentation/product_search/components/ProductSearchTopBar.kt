@@ -20,13 +20,13 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.job
-import ro.alexmamo.filterfirestorejetpackcompose.core.Constants.EMPTY_STRING
+import ro.alexmamo.filterfirestorejetpackcompose.core.Constants.EMPTY_TITLE
 import ro.alexmamo.filterfirestorejetpackcompose.core.Constants.SEARCH
 
 @Composable
 @ExperimentalComposeUiApi
 fun ProductSearchTopBar(
-    savedValue: TextFieldValue,
+    search: TextFieldValue,
     onSearchTextChanged: (newSearchText: TextFieldValue) -> Unit,
     onCloseIconClick: () -> Unit,
     navigateBack: () -> Unit,
@@ -37,7 +37,7 @@ fun ProductSearchTopBar(
     TopAppBar(
         title = {
             Text(
-                text = EMPTY_STRING
+                text = EMPTY_TITLE
             )
         },
         navigationIcon = {
@@ -52,11 +52,12 @@ fun ProductSearchTopBar(
         },
         actions = {
             OutlinedTextField(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(vertical = 2.dp)
+                modifier = Modifier.fillMaxWidth()
+                    .padding(
+                        vertical = 2.dp
+                    )
                     .focusRequester(focusRequester),
-                value = savedValue,
+                value = search,
                 onValueChange = { newSearchText ->
                     onSearchTextChanged(newSearchText)
                 },
@@ -76,9 +77,7 @@ fun ProductSearchTopBar(
                 ),
                 trailingIcon = {
                     IconButton(
-                        onClick = {
-                            onCloseIconClick()
-                        }
+                        onClick = onCloseIconClick
                     ) {
                         Icon(
                             imageVector = Icons.Filled.Close,

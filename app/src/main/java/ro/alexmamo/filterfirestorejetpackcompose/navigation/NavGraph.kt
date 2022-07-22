@@ -1,5 +1,6 @@
 package ro.alexmamo.filterfirestorejetpackcompose.navigation
 
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.navigation.NavHostController
@@ -7,12 +8,14 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import ro.alexmamo.filterfirestorejetpackcompose.domain.model.Product
 import ro.alexmamo.filterfirestorejetpackcompose.navigation.Screen.*
 import ro.alexmamo.filterfirestorejetpackcompose.presentation.product_details.ProductDetailsScreen
 import ro.alexmamo.filterfirestorejetpackcompose.presentation.product_list.ProductListScreen
 import ro.alexmamo.filterfirestorejetpackcompose.presentation.product_search.ProductSearchScreen
 
 @Composable
+@ExperimentalMaterialApi
 @ExperimentalComposeUiApi
 fun NavGraph(
     navController: NavHostController
@@ -24,8 +27,8 @@ fun NavGraph(
         fun navigateToProductSearchScreen() = navController.navigate(ProductSearchScreen.route)
 
         fun navigateToProductDetailsScreen(
-            productName: String
-        ) = navController.navigate("${ProductDetailsScreen.route}/${productName}")
+            product: Product
+        ) = navController.navigate("${ProductDetailsScreen.route}/${product.name}")
 
         fun navigateBack() = navController.popBackStack()
 

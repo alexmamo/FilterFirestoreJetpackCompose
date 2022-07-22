@@ -1,34 +1,32 @@
-package ro.alexmamo.filterfirestorejetpackcompose.presentation.product_list.components
+package ro.alexmamo.filterfirestorejetpackcompose.components
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import ro.alexmamo.filterfirestorejetpackcompose.domain.repository.ProductList
+import ro.alexmamo.filterfirestorejetpackcompose.domain.model.Product
 
 @Composable
-fun ProductListLazyColumn(
+@ExperimentalMaterialApi
+fun ProductListContent(
     padding: PaddingValues,
-    productList: ProductList,
-    navigateToProductDetailsScreen: (productName: String) -> Unit
+    productList: List<Product>,
+    navigateToProductDetailsScreen: (product: Product) -> Unit
 ) {
     LazyColumn(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(padding)
+        modifier = Modifier.fillMaxSize().padding(padding)
     ) {
         items(
             items = productList
         ) { product ->
             ProductCard(
                 product = product,
-                onProductClick = {
-                    product.name?.let { productName ->
-                        navigateToProductDetailsScreen(productName)
-                    }
+                onClick = {
+                    navigateToProductDetailsScreen(product)
                 }
             )
         }

@@ -6,16 +6,17 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import ro.alexmamo.filterfirestorejetpackcompose.core.Constants.NO_PRODUCTS_FOUND
 
 @Composable
-fun NoSearchResults() {
+fun Message(
+    text: String
+) {
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
         Text(
-            text = NO_PRODUCTS_FOUND
+            text = text
         )
     }
 }

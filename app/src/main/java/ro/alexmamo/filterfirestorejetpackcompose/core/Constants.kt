@@ -14,8 +14,11 @@ object Constants {
     const val PRODUCT_DETAILS_SCREEN = "Product Details"
 
     //Placeholders
-    const val EMPTY_STRING = ""
     const val SEARCH = "Search..."
+
+    //Values
+    const val NO_SEARCH = ""
+    const val EMPTY_TITLE = ""
 
     //Messages
     const val NO_PRODUCTS_FOUND = "No products found."
