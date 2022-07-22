@@ -13,7 +13,7 @@ fun ProductDetailsScreen(
     Scaffold(
         topBar = {
             ProductDetailsTopBar(
-                onArrowBackClick = navigateBack
+                navigateBack = navigateBack
             )
         },
         content = { padding ->

@@ -11,7 +11,7 @@ import ro.alexmamo.filterfirestorejetpackcompose.core.Constants.PRODUCT_DETAILS_
 
 @Composable
 fun ProductDetailsTopBar(
-    onArrowBackClick: () -> Unit
+    navigateBack: () -> Unit
 ) {
     TopAppBar(
         title = {
@@ -21,7 +21,7 @@ fun ProductDetailsTopBar(
         },
         navigationIcon = {
             IconButton(
-                onClick = onArrowBackClick
+                onClick = navigateBack
             ) {
                 Icon(
                     imageVector = Icons.Filled.ArrowBack,
