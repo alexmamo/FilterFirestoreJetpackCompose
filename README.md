@@ -30,7 +30,7 @@ This repo represents the code for following article writen on the Medium publica
 
 See it also on youtube:
 
-* //
+* https://youtu.be/95hA_tTjU54
 
 If you download or clone this repo, in order to make it work, you should follow the instructions given in the official documentation regarding on [how to add Firebase to your project][11].
 
