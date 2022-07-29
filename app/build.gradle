@@ -51,7 +51,7 @@ android {
 dependencies {
     //ViewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$viewmodel_version"
-    //Navigation
+    //Navigation Compose
     implementation "androidx.navigation:navigation-compose:$navigation_compose_version"
     //Compose
     implementation "androidx.compose.material:material:$compose_version"
