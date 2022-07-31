@@ -20,7 +20,7 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.job
-import ro.alexmamo.filterfirestorejetpackcompose.core.Constants.EMPTY_TITLE
+import ro.alexmamo.filterfirestorejetpackcompose.core.Constants.NO_TITLE
 import ro.alexmamo.filterfirestorejetpackcompose.core.Constants.SEARCH
 
 @Composable
@@ -37,7 +37,7 @@ fun ProductSearchTopBar(
     TopAppBar(
         title = {
             Text(
-                text = EMPTY_TITLE
+                text = NO_TITLE
             )
         },
         navigationIcon = {
