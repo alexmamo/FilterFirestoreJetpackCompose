@@ -45,7 +45,7 @@ fun ProductSearchScreen(
         },
         content = { padding ->
             val searchText = search.text
-            LaunchedEffect(Unit) {
+            LaunchedEffect(searchText) {
                 viewModel.getProductList(searchText)
             }
             when(val productListResponse = viewModel.productListResponse) {
