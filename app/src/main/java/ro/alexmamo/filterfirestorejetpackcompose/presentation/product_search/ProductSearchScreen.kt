@@ -2,11 +2,8 @@ package ro.alexmamo.filterfirestorejetpackcompose.presentation.product_search
 
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Scaffold
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -48,7 +45,9 @@ fun ProductSearchScreen(
         },
         content = { padding ->
             val searchText = search.text
-            viewModel.getProductList(searchText)
+            LaunchedEffect(Unit) {
+                viewModel.getProductList(searchText)
+            }
             when(val productListResponse = viewModel.productListResponse) {
                 is Loading -> ProgressBar()
                 is Success -> {
